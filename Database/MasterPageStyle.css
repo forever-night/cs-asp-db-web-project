@@ -1,0 +1,24 @@
+﻿body {
+    width: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px dashed gray;
+    background-color: aliceblue;
+}
+
+
+div.header {
+    height: auto;
+    margin: 20px;
+    background-color: lightsteelblue;
+    border: 2px dotted black;
+    vertical-align: central;
+}
+
+
+div.main {
+    height: auto;
+    margin: 10px 30px 30px 30px;
+    border: 1px dotted navy;
+}

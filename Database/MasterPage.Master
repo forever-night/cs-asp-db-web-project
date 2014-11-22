@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Database.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="MasterPageStyle.css" type="text/css"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <h2 style="text-align: center; font-family: Verdana; color: navy;" >
+                staff database
+            </h2>
+        </div>
+
+    
+        <div class="main">
+            <asp:GridView ID="GridView1" runat="server"
+                style="margin: 60px; border: 1px double darkgray; font: sans-serif; background-color: linen;"
+                AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource" AllowPaging="True" >
+                <Columns>
+                    <asp:BoundField DataField="emp_id" HeaderText="emp_id" ReadOnly="True" SortExpression="emp_id" />
+                    <asp:BoundField DataField="emp_name" HeaderText="emp_name" SortExpression="emp_name" />
+                    <asp:BoundField DataField="emp_surname" HeaderText="emp_surname" SortExpression="emp_surname" />
+                    <asp:BoundField DataField="emp_personal_id" HeaderText="emp_personal_id" SortExpression="emp_personal_id" />
+                    <asp:BoundField DataField="emp_dept_id" HeaderText="emp_dept_id" SortExpression="emp_dept_id" />
+                    <asp:BoundField DataField="emp_tel_id" HeaderText="emp_tel_id" SortExpression="emp_tel_id" />
+                    <asp:BoundField DataField="emp_addr_id" HeaderText="emp_addr_id" SortExpression="emp_addr_id" />
+                </Columns>
+            </asp:GridView>
+
+
+            <asp:SqlDataSource ID="SqlDataSource" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT * FROM [Employees]">
+            </asp:SqlDataSource>
+
+
+            <asp:GridView ID="GridView2" runat="server" 
+                style="background-color:lavenderblush; border: 1px double darkgray; margin: 0px 60px 60px 60px;"
+                AutoGenerateColumns="False" DataKeyNames="dept_id" DataSourceID="SqlDataSource2">
+                <Columns>
+                    <asp:BoundField DataField="dept_id" HeaderText="dept_id" ReadOnly="True" SortExpression="dept_id" />
+                    <asp:BoundField DataField="dept_name" HeaderText="dept_name" SortExpression="dept_name" />
+                </Columns>
+            </asp:GridView>
+
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT * FROM [Departments]">
+            </asp:SqlDataSource>
+
+
+            <asp:GridView ID="GridView3" runat="server" 
+                style="background-color:lightcyan; border: 1px double darkgray; margin: 0px 60px 60px 60px;"
+                AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
+                <Columns>
+                    <asp:BoundField DataField="addr_country" HeaderText="addr_country" SortExpression="addr_country" />
+                    <asp:BoundField DataField="addr_city" HeaderText="addr_city" SortExpression="addr_city" />
+                    <asp:BoundField DataField="addr_street" HeaderText="addr_street" SortExpression="addr_street" />
+                    <asp:BoundField DataField="addr_zipcode" HeaderText="addr_zipcode" SortExpression="addr_zipcode" />
+                    <asp:BoundField DataField="addr_house" HeaderText="addr_house" SortExpression="addr_house" />
+                    <asp:BoundField DataField="addr_emp_id" HeaderText="addr_emp_id" SortExpression="addr_emp_id" />
+                </Columns>
+            </asp:GridView>
+
+
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT [addr_country], [addr_city], [addr_street], [addr_zipcode], [addr_house], [addr_emp_id] FROM [Addresses]">
+            </asp:SqlDataSource>
+
+
+            <asp:GridView ID="GridView4" runat="server" 
+                style="background-color:peachpuff; border: 1px double darkgray; margin: 0px 60px 10px 60px;"
+                AutoGenerateColumns="False" DataSourceID="SqlDataSource4">
+                <Columns>
+                    <asp:BoundField DataField="tel_num" HeaderText="tel_num" SortExpression="tel_num" />
+                    <asp:BoundField DataField="tel_emp_id" HeaderText="tel_emp_id" SortExpression="tel_emp_id" />
+                </Columns>
+            </asp:GridView>
+
+
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT [tel_num], [tel_emp_id] FROM [Telephones]">
+            </asp:SqlDataSource>
+        </div>
+        
+    </form>
+
+</body>
+</html>
