@@ -1,6 +1,0 @@
-c:\users\anna\documents\visual studio 2013\Projects\Database\Database\bin\Database.dll.config
-c:\users\anna\documents\visual studio 2013\Projects\Database\Database\bin\Database.dll
-c:\users\anna\documents\visual studio 2013\Projects\Database\Database\bin\Database.pdb
-c:\users\anna\documents\visual studio 2013\Projects\Database\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
-c:\users\anna\documents\visual studio 2013\Projects\Database\Database\obj\Debug\Database.dll
-c:\users\anna\documents\visual studio 2013\Projects\Database\Database\obj\Debug\Database.pdb
