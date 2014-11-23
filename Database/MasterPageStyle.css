@@ -1,0 +1,88 @@
+﻿body {
+    width: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px dashed gray;
+    background-color: aliceblue;
+}
+
+
+div.header {
+    height: auto;
+    margin: 20px;
+    background-color: lightsteelblue;
+    border: 2px dotted black;
+    vertical-align: central;
+}
+
+
+div.main {
+    height: auto;
+    margin: 10px 30px 30px 30px;
+    border: 1px dotted navy;
+}
+
+
+.employees, .departments, .addresses, .telephones {
+    border: 1px double darkgray; 
+    font: sans-serif; 
+    margin: 0px 60px 60px 60px;
+    width: 600px;
+}
+
+
+.employees {
+    margin-top: 60px;
+    background-color: linen;
+}
+
+
+.departments {
+    background-color:lavenderblush;
+    width: 200px;
+}
+
+
+.addresses {
+    background-color:lightcyan;
+}
+
+
+.telephones {
+    background-color:peachpuff;
+}
+
+
+div.add {
+    width: 500px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border: 2px double black;
+    background-color: palegoldenrod;
+    padding-top: 20px;
+}
+
+
+.labels {
+    float: left;
+    margin: 15px 20px 0px 60px;
+    width: 100px;
+}
+
+
+.data {
+    float: left;
+    margin: 15px 20px 0px 0px;
+    width: 250px;
+    }
+
+
+.btn {
+    float: right;
+    margin-right: 30px;
+    height: 28px;
+    width: 70px;
+}
