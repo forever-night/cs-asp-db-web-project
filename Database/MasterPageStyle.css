@@ -22,3 +22,43 @@ div.main {
     margin: 10px 30px 30px 30px;
     border: 1px dotted navy;
 }
+
+
+.employees, .departments, .addresses, .telephones {
+    border: 1px double darkgray; 
+    font: sans-serif; 
+    margin: 0px 60px 60px 60px;
+}
+
+
+.employees {
+    margin-top: 60px;
+    background-color: linen;
+}
+
+
+.departments {
+    background-color:lavenderblush;
+}
+
+
+.addresses {
+    background-color:lightcyan;
+}
+
+
+.telephones {
+    background-color:peachpuff;
+}
+
+
+.add {
+    width: 500px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    height: auto;
+    border: 2px double dotted navy;
+    background-color: aliceblue;
+}
