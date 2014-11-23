@@ -130,13 +130,13 @@ namespace Database {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// SqlDataSource control.
+        /// Employees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource Employees;
         
         /// <summary>
         /// GridView2 control.
@@ -148,13 +148,13 @@ namespace Database {
         protected global::System.Web.UI.WebControls.GridView GridView2;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// Departments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.SqlDataSource Departments;
         
         /// <summary>
         /// GridView3 control.
@@ -166,13 +166,13 @@ namespace Database {
         protected global::System.Web.UI.WebControls.GridView GridView3;
         
         /// <summary>
-        /// SqlDataSource3 control.
+        /// Addresses control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+        protected global::System.Web.UI.WebControls.SqlDataSource Addresses;
         
         /// <summary>
         /// GridView4 control.
@@ -184,12 +184,12 @@ namespace Database {
         protected global::System.Web.UI.WebControls.GridView GridView4;
         
         /// <summary>
-        /// SqlDataSource4 control.
+        /// Telephones control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
+        protected global::System.Web.UI.WebControls.SqlDataSource Telephones;
     }
 }
