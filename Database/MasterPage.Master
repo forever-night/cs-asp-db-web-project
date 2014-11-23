@@ -22,6 +22,46 @@
     
         <div class="main">
 
+            <div class="add">
+
+                <div style="height: 150px">
+                    <asp:Label class="labels" ID="lbl_emp_name" runat="server" 
+                        Text="Name">
+                    </asp:Label>
+
+                    <asp:TextBox class="data" ID="tb_emp_name" runat="server"></asp:TextBox>
+
+
+                    <asp:Label class="labels" ID="lbl_emp_surname" runat="server" 
+                        Text="Surname"></asp:Label>
+
+                    <asp:TextBox class="data" ID="tb_emp_surname" runat="server"></asp:TextBox>
+
+
+                    <asp:Label class="labels" ID="lbl_emp_personal_id" runat="server" 
+                        Text="PESEL">
+                    </asp:Label>
+
+                    <asp:TextBox class="data" ID="tb_emp_personal_id" runat="server"></asp:TextBox>
+
+
+                    <asp:Label class="labels" ID="lbl_emp_dept" runat="server" 
+                        Text="Department">
+                    </asp:Label>
+
+                    <asp:DropDownList class="data" ID="dl_dept_id" runat="server" 
+                        AutoPostBack="True" DataSourceID="SqlDataSource2" 
+                        DataTextField="dept_name" DataValueField="dept_id" Width="150px">
+                    </asp:DropDownList>
+                </div>
+
+               <div">
+                   <asp:Button class="btn" ID="btn_insert" runat="server" Text="Insert"/>
+                   <asp:Button class="btn" ID="btn_clear" runat="server" Text="Clear"/>
+               </div>
+            </div>
+            
+
             <asp:GridView class="employees" ID="GridView1" runat="server"
                 AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="SqlDataSource" AllowPaging="True" AllowSorting="True" >
                 <Columns>

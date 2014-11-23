@@ -52,13 +52,35 @@ div.main {
 }
 
 
-.add {
+div.add {
     width: 500px;
-    height: 300px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
-    height: auto;
-    border: 2px double dotted navy;
-    background-color: aliceblue;
+    border: 2px double dotted black;
+    background-color: palegoldenrod;
+    padding-top: 20px;
+}
+
+
+.labels {
+    float: left;
+    margin: 15px 20px 0px 60px;
+    width: 100px;
+}
+
+
+.data {
+    float: left;
+    margin: 15px 20px 0px 0px;
+    width: 250px;
+    }
+
+
+.btn {
+    float: right;
+    margin-right: 30px;
+    height: 28px;
+    width: 70px;
 }
