@@ -66,11 +66,6 @@ div.add {
 }
 
 
-.big.data, .big.labels {
-    margin-top: 10px;
-}
-
-
 .labels {
     float: left;
     margin: 15px 20px 0px 60px;
@@ -90,4 +85,9 @@ div.add {
     margin-right: 30px;
     height: 28px;
     width: 70px;
+}
+
+
+.big.data, .big.labels {
+    margin-top: 10px;
 }
