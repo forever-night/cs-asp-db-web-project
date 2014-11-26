@@ -5,19 +5,26 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Configuration;
 
 
 namespace Database
 {
     public partial class Employees : System.Web.UI.Page
     {
+        string txtSqlConnect = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        string txtSqlCommand;
+        SqlCommand sqlCommand;
+
+
+        protected enum Status { Clear, Insert, Warning, NoNumbers };
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        
-        protected enum Status { Clear, Insert, Warning, NoNumbers };
+        }       
 
 
         protected void ChangeStatus(Label status, Status st)
@@ -71,10 +78,25 @@ namespace Database
             }
             else
             {
-                // insert data
+                using (SqlConnection sqlConnect = new SqlConnection(txtSqlConnect))
+                {
+                    txtSqlCommand = "INSERT INTO Employees (emp_name, emp_surname, emp_personal_id, emp_dept_id) VALUES (@emp_name, @emp_surname, @emp_personal_id, @emp_dept_id)";
+
+                    sqlCommand = new SqlCommand(txtSqlCommand, sqlConnect);
+
+                    sqlCommand.Parameters.AddWithValue("@emp_name", this.tb_emp_name.Text);
+                    sqlCommand.Parameters.AddWithValue("@emp_surname", this.tb_emp_surname.Text);
+                    sqlCommand.Parameters.AddWithValue("@emp_personal_id", this.tb_emp_personal_id.Text);
+                    sqlCommand.Parameters.AddWithValue("@emp_dept_id", this.dl_dept_id.Text);
+
+                    sqlCommand.Connection.Open();
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                // TODO reload page, clear query, update and show updated DB
 
 
-                // clear fields for later use
+                // clear form, display status
                 btn_clear_emp_Click(sender, e);
 
                 ChangeStatus(this.lbl_status_emp, Status.Insert);
@@ -111,8 +133,29 @@ namespace Database
             else
             {
                 // insert data
+                using (SqlConnection sqlConnect = new SqlConnection(txtSqlConnect))
+                {
+                    // TODO select Employee where emp_id == addr_emp_id and insert emp_addr_id = addr_id
+
+                    txtSqlCommand = "INSERT INTO Addresses (addr_emp_id, addr_country, addr_city, addr_street, addr_house, addr_zipcode) VALUES (@addr_emp_id, @addr_country, @addr_city, @addr_street, @addr_house, @addr_zipcode)";
+
+                    sqlCommand = new SqlCommand(txtSqlCommand, sqlConnect);
+
+                    sqlCommand.Parameters.AddWithValue("@addr_emp_id", this.dl_addr_emp_id.Text);
+                    sqlCommand.Parameters.AddWithValue("@addr_country", this.tb_country.Text);
+                    sqlCommand.Parameters.AddWithValue("@addr_city", this.tb_city.Text);
+                    sqlCommand.Parameters.AddWithValue("@addr_street", this.tb_street.Text);
+                    sqlCommand.Parameters.AddWithValue("@addr_house", this.tb_house.Text);
+                    sqlCommand.Parameters.AddWithValue("@addr_zipcode", this.tb_zipcode.Text);
+
+                    sqlCommand.Connection.Open();
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                // TODO reload page, clear query, update and show updated DB
 
 
+                // clear form, display status
                 btn_clear_addr_Click(sender, e);
 
                 ChangeStatus(this.lbl_status_addr, Status.Insert);
@@ -141,8 +184,22 @@ namespace Database
             else
             {
                 // insert data
+                using (SqlConnection sqlConnect = new SqlConnection(txtSqlConnect))
+                {
+                    // TODO select Employee where emp_id == tel_emp_id and insert emp_tel_id == tel_id
+
+                    txtSqlCommand = "INSERT INTO Telephones (tel_emp_id, tel_num) VALUES (@tel_emp_id, @tel_num);";
+
+                    sqlCommand = new SqlCommand(txtSqlCommand, sqlConnect);
+
+                    sqlCommand.Connection.Open();
+                    sqlCommand.ExecuteNonQuery();
+                }
+
+                // TODO reload page, clear query, update and show updated DB
 
 
+                // clear form, display status
                 btn_clear_tel_Click(sender, e);
 
                 ChangeStatus(this.lbl_status_tel, Status.Insert);
