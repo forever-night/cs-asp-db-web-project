@@ -56,13 +56,18 @@ div.main {
 
 div.add {
     width: 500px;
-    height: 200px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
     border: 2px double black;
     background-color: palegoldenrod;
     padding-top: 20px;
+}
+
+
+.big.data, .big.labels {
+    margin-top: 10px;
 }
 
 

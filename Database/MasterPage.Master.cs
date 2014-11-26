@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
+
 
 namespace Database
 {
@@ -15,32 +17,98 @@ namespace Database
         }
 
 
-        protected void btn_clear_Click(object sender, EventArgs e)
+        protected enum Status { Clear, Insert, Warning, NoNumbers };
+
+
+        protected void ChangeStatus(Label status, Status st)
+        {
+            if (st == Status.Clear)
+            {
+                status.ForeColor = System.Drawing.Color.DarkGreen;
+                status.Text = "form cleared";
+            }
+            else if (st == Status.Insert)
+            {
+                status.ForeColor = System.Drawing.Color.DarkGreen;
+                status.Text = "data inserted";
+            }
+            else if (st == Status.NoNumbers)
+            {
+                status.ForeColor = System.Drawing.Color.Crimson;
+                status.Text = "field should contain only numbers";
+            }
+            else if (st == Status.Warning)
+            {
+                status.ForeColor = System.Drawing.Color.Crimson;
+                status.Text = "every field shoud be filled";
+            }
+        }
+
+
+        protected void btn_clear_emp_Click(object sender, EventArgs e)
         {
             this.tb_emp_name.Text = String.Empty;
             this.tb_emp_surname.Text = String.Empty;
             this.tb_emp_personal_id.Text = String.Empty;
 
+
             this.dl_dept_id.ClearSelection();
 
-            this.lbl_status.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbl_status.Text = "form cleared";
+
+            ChangeStatus(this.lbl_status_emp, Status.Clear);
         }
 
-        protected void btn_insert_Click(object sender, EventArgs e)
+
+        protected void btn_insert_emp_Click(object sender, EventArgs e)
         {
             if (tb_emp_name.Text == String.Empty || tb_emp_surname.Text == String.Empty ||
                 tb_emp_personal_id.Text == String.Empty || dl_dept_id.SelectedValue == "empty")
-            {
-                this.lbl_status.ForeColor = System.Drawing.Color.Crimson;
-                this.lbl_status.Text = "every field shoud be filled";
-            }
+                ChangeStatus(this.lbl_status_emp, Status.Warning);
+
             else
             {
                 // insert data
 
-                this.lbl_status.ForeColor = System.Drawing.Color.DarkGreen;
-                this.lbl_status.Text = "data inserted";
+
+                ChangeStatus(this.lbl_status_emp, Status.Insert);
+            }
+        }
+
+
+        protected void btn_clear_addr_Click(object sender, EventArgs e)
+        {
+            this.dl_addr_emp_id.ClearSelection();
+
+            this.tb_country.Text = String.Empty;
+            this.tb_city.Text = String.Empty;
+            this.tb_street.Text = String.Empty;
+            this.tb_house.Text = String.Empty;
+            this.tb_zipcode.Text = String.Empty;
+
+
+            ChangeStatus(this.lbl_status_addr, Status.Clear);
+        }
+
+
+        protected void btn_insert_addr_Click(object sender, EventArgs e)
+        {
+            if (this.tb_country.Text == String.Empty || this.tb_city.Text == String.Empty ||
+                this.tb_street.Text == String.Empty || this.tb_house.Text == String.Empty ||
+                this.tb_zipcode.Text == String.Empty || this.dl_addr_emp_id.SelectedValue == "empty")
+                ChangeStatus(this.lbl_status_addr, Status.Warning);
+
+            else if (Regex.Match(this.tb_zipcode.Text, @"^[0-9]+$").Success == false)
+            {
+                ChangeStatus(this.lbl_status_addr, Status.NoNumbers);
+                this.lbl_status_addr.Text += ": Zip-Code";
+            }
+
+            else
+            {
+                // insert data
+
+
+                ChangeStatus(this.lbl_status_addr, Status.Insert);
             }
         }
     }
