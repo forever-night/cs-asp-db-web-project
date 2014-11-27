@@ -51,7 +51,7 @@
         </div>
 
 
-        <asp:GridView CssClass="employees" ID="GridView1" runat="server" AutoGenerateColumns="False" 
+        <asp:GridView CssClass="employees" ID="EmployeesGridView" runat="server" AutoGenerateColumns="False" 
             DataKeyNames="emp_id" DataSourceID="EmployeesDataSource" AllowSorting="True" Width="617px">
 
             <Columns>
@@ -70,7 +70,7 @@
         </asp:SqlDataSource>
 
 
-        <asp:GridView CssClass="departments" ID="GridView2" runat="server" 
+        <asp:GridView CssClass="departments" ID="DepartmentsGridView" runat="server" 
             AutoGenerateColumns="False" DataSourceID="DepartmentsDataSource" DataKeyNames="dept_id">
             <Columns>
                 <asp:BoundField DataField="dept_id" HeaderText="ID" ReadOnly="True" SortExpression="dept_id" />
@@ -142,7 +142,7 @@
         </div>
 
 
-        <asp:GridView CssClass="addresses" ID="GridView3" runat="server" AutoGenerateColumns="False" 
+        <asp:GridView CssClass="addresses" ID="AddressesGridView" runat="server" AutoGenerateColumns="False" 
             DataSourceID="AddressesDataSource" AllowSorting="True" DataKeyNames="Expr1" Width="617px">
 
             <Columns>
@@ -193,7 +193,7 @@
         </div>
 
 
-        <asp:GridView CssClass="telephones" ID="GridView4" runat="server" AutoGenerateColumns="False" 
+        <asp:GridView CssClass="telephones" ID="TelephonesGridView" runat="server" AutoGenerateColumns="False" 
             DataSourceID="TelephonesDataSource" AllowSorting="True" DataKeyNames="emp_id" Width="616px">
 
             <Columns>

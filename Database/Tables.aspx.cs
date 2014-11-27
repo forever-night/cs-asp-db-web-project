@@ -129,6 +129,8 @@ namespace Database
                 ClearForm(Forms.Employees);
 
                 ChangeStatus(this.lbl_status_emp, Status.Insert);
+
+                this.EmployeesGridView.DataBind();
             }
         }
 
@@ -180,12 +182,15 @@ namespace Database
                 ClearForm(Forms.Addresses);
 
                 ChangeStatus(this.lbl_status_addr, Status.Insert);
+
+                this.AddressesGridView.DataBind();
+                this.EmployeesGridView.DataBind();
             }
         }
 
         protected void btn_clear_tel_Click(object sender, EventArgs e)
         {
-            
+            ClearForm(Forms.Telephones);
 
             ChangeStatus(this.lbl_status_tel, Status.Clear);
         }
@@ -223,6 +228,9 @@ namespace Database
                 ClearForm(Forms.Telephones);
 
                 ChangeStatus(this.lbl_status_tel, Status.Insert);
+
+                this.TelephonesGridView.DataBind();
+                this.EmployeesGridView.DataBind();
             }
         }
     }

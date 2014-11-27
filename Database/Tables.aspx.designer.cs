@@ -112,13 +112,13 @@ namespace Database {
         protected global::System.Web.UI.WebControls.Button btn_clear_emp;
         
         /// <summary>
-        /// GridView1 control.
+        /// EmployeesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView EmployeesGridView;
         
         /// <summary>
         /// EmployeesDataSource control.
@@ -130,13 +130,13 @@ namespace Database {
         protected global::System.Web.UI.WebControls.SqlDataSource EmployeesDataSource;
         
         /// <summary>
-        /// GridView2 control.
+        /// DepartmentsGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView DepartmentsGridView;
         
         /// <summary>
         /// DepartmentsDataSource control.
@@ -283,13 +283,13 @@ namespace Database {
         protected global::System.Web.UI.WebControls.Button btn_clear_addr;
         
         /// <summary>
-        /// GridView3 control.
+        /// AddressesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView3;
+        protected global::System.Web.UI.WebControls.GridView AddressesGridView;
         
         /// <summary>
         /// AddressesDataSource control.
@@ -364,13 +364,13 @@ namespace Database {
         protected global::System.Web.UI.WebControls.Button btn_clear_tel;
         
         /// <summary>
-        /// GridView4 control.
+        /// TelephonesGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView4;
+        protected global::System.Web.UI.WebControls.GridView TelephonesGridView;
         
         /// <summary>
         /// TelephonesDataSource control.
