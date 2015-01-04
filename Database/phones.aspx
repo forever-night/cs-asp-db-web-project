@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Employees" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="employees.aspx.cs" Inherits="Database.employees" %>
+﻿<%@ Page Title="Telephones" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="phones.aspx.cs" Inherits="Database.phones" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="tables.css"/>
@@ -14,12 +15,12 @@
         style="margin-top:5px; margin-left: 15px;"/>
 
 
-    <h1 class="header">EMPLOYEES</h1>
+    <h1 class="header">TELEPHONES</h1>
 
 
-    <asp:GridView ID="gv_emps" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="ds_emps" Font-Names="Verdana" Font-Size="10pt">
+    <asp:GridView ID="gv_emp_phones" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="ds_phones" CssClass="table">
         <Columns>
-            <asp:BoundField DataField="emp_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="emp_id">
+            <asp:BoundField DataField="emp_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="emp_id" >
                 <HeaderStyle HorizontalAlign="Center" />
                 <ItemStyle HorizontalAlign="Center" />
             </asp:BoundField>
@@ -27,17 +28,15 @@
             <asp:BoundField DataField="emp_name" HeaderText="Name" SortExpression="emp_name" />
             <asp:BoundField DataField="emp_surname" HeaderText="Surname" SortExpression="emp_surname" />
 
-            <asp:BoundField DataField="emp_personal_id" HeaderText="PESEL" SortExpression="emp_personal_id" >
+            <asp:BoundField DataField="tel_num" HeaderText="Phone" SortExpression="tel_num" >
                 <HeaderStyle HorizontalAlign="Center" />
                 <ItemStyle HorizontalAlign="Center" />
             </asp:BoundField>
 
-            <asp:BoundField DataField="dept_name" HeaderText="Department" SortExpression="dept_name" />
-
         </Columns>
     </asp:GridView>
-    
-    <asp:SqlDataSource ID="ds_emps" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Employees.emp_id, Employees.emp_name, Employees.emp_surname, Employees.emp_personal_id, Departments.dept_name FROM Employees INNER JOIN Departments ON Employees.emp_dept_id = Departments.dept_id">
+
+    <asp:SqlDataSource ID="ds_phones" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Employees.emp_id, Employees.emp_name, Employees.emp_surname, Telephones.tel_num FROM Employees INNER JOIN Telephones ON Employees.emp_tel_id = Telephones.tel_id">
     </asp:SqlDataSource>
 
 

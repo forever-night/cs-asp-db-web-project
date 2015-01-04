@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addresses.aspx" />
     <Content Include="departments.aspx" />
     <Content Include="employees.aspx" />
     <Content Include="Global.asax" />
@@ -80,11 +81,19 @@
       <DependentUpon>SqlDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="MasterPageStyle.css" />
+    <Content Include="phones.aspx" />
     <Content Include="Tables.aspx" />
     <Content Include="tables.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addresses.aspx.cs">
+      <DependentUpon>addresses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addresses.aspx.designer.cs">
+      <DependentUpon>addresses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="departments.aspx.cs">
       <DependentUpon>departments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +138,13 @@
     </Compile>
     <Compile Include="mp.Master.designer.cs">
       <DependentUpon>mp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="phones.aspx.cs">
+      <DependentUpon>phones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="phones.aspx.designer.cs">
+      <DependentUpon>phones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables.aspx.cs">
