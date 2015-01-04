@@ -123,9 +123,6 @@ namespace Database
                     sqlCommand.ExecuteNonQuery();
                 }
 
-                // TODO show updated DB
-
-
                 ClearForm(Forms.Employees);
 
                 ChangeStatus(this.lbl_status_emp, Status.Insert);
@@ -176,9 +173,6 @@ namespace Database
                     sqlCommand.ExecuteNonQuery();
                 }
 
-                // TODO update and show updated DB
-
-
                 ClearForm(Forms.Addresses);
 
                 ChangeStatus(this.lbl_status_addr, Status.Insert);
@@ -188,12 +182,14 @@ namespace Database
             }
         }
 
+
         protected void btn_clear_tel_Click(object sender, EventArgs e)
         {
             ClearForm(Forms.Telephones);
 
             ChangeStatus(this.lbl_status_tel, Status.Clear);
         }
+
 
         protected void btn_insert_tel_Click(object sender, EventArgs e)
         {
@@ -222,13 +218,10 @@ namespace Database
                     sqlCommand.ExecuteNonQuery();
                 }
 
-                // TODO update and show updated DB
-
-
                 ClearForm(Forms.Telephones);
 
                 ChangeStatus(this.lbl_status_tel, Status.Insert);
-
+                
                 this.TelephonesGridView.DataBind();
                 this.EmployeesGridView.DataBind();
             }

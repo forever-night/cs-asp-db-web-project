@@ -53,20 +53,26 @@
 
         <asp:GridView CssClass="employees" ID="EmployeesGridView" runat="server" AutoGenerateColumns="False" 
             DataKeyNames="emp_id" DataSourceID="EmployeesDataSource" AllowSorting="True" Width="617px">
-
             <Columns>
                 <asp:BoundField DataField="emp_id" HeaderText="ID" ReadOnly="True" SortExpression="emp_id" />
                 <asp:BoundField DataField="emp_name" HeaderText="Name" SortExpression="emp_name" />
                 <asp:BoundField DataField="emp_surname" HeaderText="Surname" SortExpression="emp_surname" />
                 <asp:BoundField DataField="emp_personal_id" HeaderText="PESEL" SortExpression="emp_personal_id" />
                 <asp:BoundField DataField="dept_name" HeaderText="Department" SortExpression="dept_name" />
+
+                <asp:CommandField ShowEditButton="True" />
+                <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
 
 
         <asp:SqlDataSource ID="EmployeesDataSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-            SelectCommand="SELECT Employees.emp_id, Employees.emp_name, Employees.emp_surname, Employees.emp_personal_id, Departments.dept_name FROM Employees INNER JOIN Departments ON Employees.emp_dept_id = Departments.dept_id">
+            SelectCommand="SELECT Employees.emp_id, Employees.emp_name, Employees.emp_surname, Employees.emp_personal_id, Departments.dept_name FROM Employees INNER JOIN Departments ON Employees.emp_dept_id = Departments.dept_id"
+            DeleteCommand="DELETE FROM Employees WHERE emp_id = @emp_id">
+            <DeleteParameters>
+                <asp:Parameter Name="ID"/>
+            </DeleteParameters>
         </asp:SqlDataSource>
 
 
@@ -154,13 +160,20 @@
                 <asp:BoundField DataField="addr_street" HeaderText="Street" SortExpression="addr_street" />
                 <asp:BoundField DataField="addr_house" HeaderText="House" SortExpression="addr_house" />
                 <asp:BoundField DataField="addr_zipcode" HeaderText="Zip-Code" SortExpression="addr_zipcode" />
+
+                <asp:CommandField ShowEditButton="True" />
+                <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
 
 
         <asp:SqlDataSource ID="AddressesDataSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-            SelectCommand="SELECT Addresses.addr_country, Addresses.addr_city, Addresses.addr_street, Addresses.addr_house, Addresses.addr_zipcode, Employees.emp_id AS Expr1, Employees.emp_name AS Expr2, Employees.emp_surname AS Expr3 FROM Addresses INNER JOIN Employees ON Addresses.addr_emp_id = Employees.emp_id">
+            SelectCommand="SELECT Addresses.addr_country, Addresses.addr_city, Addresses.addr_street, Addresses.addr_house, Addresses.addr_zipcode, Employees.emp_id AS Expr1, Employees.emp_name AS Expr2, Employees.emp_surname AS Expr3 FROM Addresses INNER JOIN Employees ON Addresses.addr_emp_id = Employees.emp_id"
+            DeleteCommand="UPDATE Employees SET emp_addr_id = NULL WHERE emp_id = @Addresses.addr_emp_id; DELETE FROM Addresses WHERE addr_emp_id = @addr_emp_id">
+            <DeleteParameters>
+                <asp:Parameter Name="ID" />
+            </DeleteParameters>
         </asp:SqlDataSource>
 
 
