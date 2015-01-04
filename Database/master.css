@@ -13,12 +13,18 @@
 
 .page {
     width: 800px;
-    height: 1000px;
+    height: auto;
     margin: auto;
     margin-top: 150px;
     background-color: #efefef;
     border: 2px solid #808080;
     border-radius: 3px;
+}
+
+
+.footer {
+    height: 60px;
+    margin-bottom: 20px;
 }
 
 
@@ -28,4 +34,11 @@
     text-align: center;
     color: #808080;
     font: italic 12px verdana;
+}
+
+
+.navigation {
+    margin-left: 70px;
+    margin-top: 70px;
+    margin-bottom: 10px;
 }
