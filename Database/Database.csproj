@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="departments.aspx" />
+    <Content Include="employees.aspx" />
     <Content Include="Global.asax" />
     <Content Include="login.aspx" />
     <Content Include="login.css" />
@@ -90,6 +91,13 @@
     </Compile>
     <Compile Include="departments.aspx.designer.cs">
       <DependentUpon>departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employees.aspx.cs">
+      <DependentUpon>employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employees.aspx.designer.cs">
+      <DependentUpon>employees.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

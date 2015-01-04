@@ -8,9 +8,12 @@
     <h1 class="header">DEPARTMENTS</h1>
 
 
-    <asp:GridView ID="gv_depts" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="dept_id" DataSourceID="ds_depts">
+    <asp:GridView ID="gv_depts" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="dept_id" DataSourceID="ds_depts" Font-Names="Verdana" Font-Size="10pt">
         <Columns>
-            <asp:BoundField DataField="dept_id" HeaderText="ID" InsertVisible="False" ReadOnly="True"           SortExpression="dept_id"/>
+            <asp:BoundField DataField="dept_id" HeaderText="ID" InsertVisible="False" ReadOnly="True"           SortExpression="dept_id">
+
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
 
             <asp:BoundField DataField="dept_name" HeaderText="Department" SortExpression="dept_name" />
         </Columns>
