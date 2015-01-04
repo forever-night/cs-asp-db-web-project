@@ -29,13 +29,16 @@ div.loginform{
 }
 
 
-.button{
-    width: 80px;
-    height: 30px;
-    margin: 10px 120px;
-    margin-top: 0px;
+.button {
     background-color: #42169f;
     color: #efefef;
     font: 14px verdana;
     border: 2px solid #3d0ea1;
+}
+
+
+.button.small{
+    width: 80px;
+    height: 30px;
+    margin: 10px 120px;    
 }

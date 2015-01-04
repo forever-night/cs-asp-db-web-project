@@ -24,7 +24,7 @@
         </asp:Label>
         
 
-        <asp:Button ID="btn_login" runat="server" CssClass="button" Text="Log In" />
+        <asp:Button ID="btn_login" runat="server" CssClass="button small" Text="Log In" />
     </div>
     </form>
 
