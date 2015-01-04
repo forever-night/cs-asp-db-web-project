@@ -1,14 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="Database.main" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mp.master.cs" Inherits="Database.mp" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>main</title>
-
+    <title></title>
     <link rel="stylesheet" type="text/css" href="master.css"/>
-    <link rel="stylesheet" type="text/css" href="main.css"/>
-
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,15 +17,11 @@
 
         <asp:Button ID="btn_logout" runat="server" Text="Log Out" CssClass="button"
             style="width: 60px; height: 25px; font-size: 12px; float: right; margin: 10px 5px;"/>
+        <br><br>
 
 
-        <div style="width: 350px; margin: auto; margin-top: 50px;">
-            <asp:Button ID="btn_depts" runat="server" Text="Departments" CssClass="button big"
-                Font-Size="20px"/>
-            <br>
-            <asp:Button ID="btn_emps" runat="server" Text="Employees" CssClass="button big"
-                Font-Size="20px"/>
-        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
 
     </div>
     </form>

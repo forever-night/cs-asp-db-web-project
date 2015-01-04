@@ -3,37 +3,16 @@
 }
 
 
-div.loginform{
+.page{
     width: 320px;
     height: 200px;
-    margin: auto;
     margin-top: 250px;
-    background-color: #efefef;
-    border-radius: 3px;
-    border: 2px solid #808080;
-}
-
-
-.label{
-    width: inherit;
-    margin: auto;
-    text-align: center;
-    color: #808080;
-    font: italic 12px verdana;
 }
 
 
 .textbox{
     margin: 0px 60px 10px;
     width: 200px;
-}
-
-
-.button {
-    background-color: #42169f;
-    color: #efefef;
-    font: 14px verdana;
-    border: 2px solid #3d0ea1;
 }
 
 

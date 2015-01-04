@@ -5,11 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>log in</title>
-    <link rel="stylesheet" href="login.css" type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="master.css"/>
+    <link rel="stylesheet" type="text/css" href="login.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="loginform">
+    <div class="page">
         
         <p class="label" style="margin-top: 20px">login</p>
         <asp:TextBox ID="tb_login" runat="server" CssClass="textbox"></asp:TextBox>
