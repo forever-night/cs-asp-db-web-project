@@ -57,7 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="add_address.aspx" />
+    <Content Include="add_department.aspx" />
+    <Content Include="add_employee.aspx" />
+    <Content Include="add_phone.aspx" />
+    <Content Include="add.css" />
     <Content Include="addresses.aspx" />
+    <Content Include="add_checking.aspx" />
     <Content Include="departments.aspx" />
     <Content Include="employees.aspx" />
     <Content Include="Global.asax" />
@@ -87,12 +93,47 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_address.aspx.cs">
+      <DependentUpon>add_address.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_address.aspx.designer.cs">
+      <DependentUpon>add_address.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="add_department.aspx.cs">
+      <DependentUpon>add_department.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_department.aspx.designer.cs">
+      <DependentUpon>add_department.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="add_employee.aspx.cs">
+      <DependentUpon>add_employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_employee.aspx.designer.cs">
+      <DependentUpon>add_employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="add_phone.aspx.cs">
+      <DependentUpon>add_phone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_phone.aspx.designer.cs">
+      <DependentUpon>add_phone.aspx</DependentUpon>
+    </Compile>
     <Compile Include="addresses.aspx.cs">
       <DependentUpon>addresses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="addresses.aspx.designer.cs">
       <DependentUpon>addresses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="add_checking.aspx.cs">
+      <DependentUpon>add_checking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_checking.aspx.designer.cs">
+      <DependentUpon>add_checking.aspx</DependentUpon>
     </Compile>
     <Compile Include="departments.aspx.cs">
       <DependentUpon>departments.aspx</DependentUpon>

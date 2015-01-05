@@ -1,0 +1,19 @@
+﻿.textbox {
+    margin-left: 60px;
+    margin-top: 15px;
+}
+
+
+.label2 {
+    color: #555555;
+    text-align: left;
+    font: normal 12pt verdana;
+}
+
+
+.button2 {
+    float: right; 
+    margin-right: 50px; 
+    margin-top: 20px; 
+    width: 70px;
+}
