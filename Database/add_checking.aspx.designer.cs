@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class add_checking {
+    public partial class Add_checking {
         
         /// <summary>
         /// lbl_emp_name control.

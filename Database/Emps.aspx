@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Employees" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="employees.aspx.cs" Inherits="Database.employees" %>
+﻿<%@ Page Title="Employees" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Emps.aspx.cs" Inherits="Database.Emps" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="tables.css"/>
@@ -7,11 +7,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <asp:Button ID="btn_emps" runat="server" Text="Employees" CssClass="button navigation"
-        style="margin-top:5px;"/>
+        style="margin-top:5px;" OnClick="btn_emps_Click"/>
     <asp:Button ID="btn_emp_phones" runat="server" Text="Telephones" CssClass="button navigation"
-        style="margin-top:5px; margin-left: 15px;"/>
+        style="margin-top:5px; margin-left: 15px;" OnClick="btn_emp_phones_Click"/>
     <asp:Button ID="btn_emp_addr" runat="server" Text="Addresses" CssClass="button navigation"
-        style="margin-top:5px; margin-left: 15px;"/>
+        style="margin-top:5px; margin-left: 15px;" OnClick="btn_emp_addr_Click"/>
 
 
     <h1 class="header">EMPLOYEES</h1>
@@ -41,6 +41,6 @@
     </asp:SqlDataSource>
 
 
-    <asp:Button ID="btn_add_dept" runat="server" Text="Add" CssClass="button"
-        style="width: 80px; height: 30px; float: right; margin-right: 50px;"/>
+    <asp:Button ID="btn_add_emp" runat="server" Text="Add" CssClass="button"
+        style="width: 80px; height: 30px; float: right; margin-right: 50px;" OnClick="btn_add_emp_Click"/>
 </asp:Content>

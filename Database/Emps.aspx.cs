@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Database
 {
-    public partial class Addresses : System.Web.UI.Page
+    public partial class Emps : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,17 +16,22 @@ namespace Database
 
         protected void btn_emps_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Emps.aspx");
+            Server.Transfer("Emps.aspx", false);
         }
 
         protected void btn_emp_phones_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Phones.aspx");
+            Server.Transfer("Phones.aspx", false);
         }
 
         protected void btn_emp_addr_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Addresses.aspx");
+            Server.Transfer("Addresses.aspx", false);
+        }
+
+        protected void btn_add_emp_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Add_employee.aspx", false);
         }
     }
 }

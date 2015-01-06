@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Add department" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="add_department.aspx.cs" Inherits="Database.add_department" %>
+﻿<%@ Page Title="Add department" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Add_department.aspx.cs" Inherits="Database.Add_department" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -19,9 +19,9 @@
         <br>
 
         <asp:Button ID="btn_finish" runat="server" Text="Finish" CssClass="button" 
-            style="float: right; margin-right: 40px; margin-top: 40px;"/>
+            style="float: right; margin-right: 40px; margin-top: 40px;" OnClick="btn_finish_Click"/>
         <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CssClass="button" 
-            style="float: right; margin-right: 50px; margin-top: 40px;"/>
+            style="float: right; margin-right: 50px; margin-top: 40px;" OnClick="btn_cancel_Click"/>
 
     </div>
 </asp:Content>

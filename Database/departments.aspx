@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Departments" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="departments.aspx.cs" Inherits="Database.departments" %>
+﻿<%@ Page Title="Departments" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Departments.aspx.cs" Inherits="Database.Departments" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="tables.css"/>
@@ -24,6 +24,6 @@
 
 
     <asp:Button ID="btn_add_dept" runat="server" Text="Add" CssClass="button"
-        style="width: 80px; height: 30px; float: right; margin-right: 50px;"/>
+        style="width: 80px; height: 30px; float: right; margin-right: 50px;" OnClick="btn_add_dept_Click"/>
 
 </asp:Content>

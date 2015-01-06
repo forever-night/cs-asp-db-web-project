@@ -11,7 +11,24 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // TODO get username
+            // string username;
+            //
+            // this.lbl_user.Text += username;
+        }
 
+        protected void btn_link_main_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Main.aspx", false);
+        }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            // TODO logout
+
+            this.lbl_user.Text = "You've logged in as ";
+
+            Server.Transfer("Login.aspx", false);
         }
     }
 }

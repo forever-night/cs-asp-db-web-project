@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace Database
 {
-    public partial class departments : System.Web.UI.Page
+    public partial class Departments : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btn_add_dept_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Add_department.aspx", false);
         }
     }
 }

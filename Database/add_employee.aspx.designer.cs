@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class add_employee {
+    public partial class Add_employee {
         
         /// <summary>
         /// lbl_emp_name control.

@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class employees {
+    public partial class Emps {
         
         /// <summary>
         /// btn_emps control.
@@ -58,12 +58,12 @@ namespace Database {
         protected global::System.Web.UI.WebControls.SqlDataSource ds_emps;
         
         /// <summary>
-        /// btn_add_dept control.
+        /// btn_add_emp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add_dept;
+        protected global::System.Web.UI.WebControls.Button btn_add_emp;
     }
 }

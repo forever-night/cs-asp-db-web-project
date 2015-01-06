@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Checking" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="add_checking.aspx.cs" Inherits="Database.add_checking" %>
+﻿<%@ Page Title="Checking" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Add_checking.aspx.cs" Inherits="Database.Add_checking" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -87,7 +87,7 @@
         <asp:Label ID="lbl_status" runat="server" CssClass="label" Width="650px"></asp:Label>
 
 
-        <asp:Button ID="btn_finish" runat="server" Text="Finish" CssClass="button button2" style="margin-right: 70px;"/>
-        <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CssClass="button button2"/>
+        <asp:Button ID="btn_finish" runat="server" Text="Finish" CssClass="button button2" style="margin-right: 70px;" OnClick="btn_finish_Click"/>
+        <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CssClass="button button2" OnClick="btn_cancel_Click"/>
     </div>
 </asp:Content>

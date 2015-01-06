@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Addresses" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="addresses.aspx.cs" Inherits="Database.addresses" %>
+﻿<%@ Page Title="Addresses" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Addresses.aspx.cs" Inherits="Database.Addresses" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -8,11 +8,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <asp:Button ID="btn_emps" runat="server" Text="Employees" CssClass="button navigation"
-        style="margin-top:5px;"/>
+        style="margin-top:5px;" OnClick="btn_emps_Click"/>
     <asp:Button ID="btn_emp_phones" runat="server" Text="Telephones" CssClass="button navigation"
-        style="margin-top:5px; margin-left: 15px;"/>
+        style="margin-top:5px; margin-left: 15px;" OnClick="btn_emp_phones_Click"/>
     <asp:Button ID="btn_emp_addr" runat="server" Text="Addresses" CssClass="button navigation"
-        style="margin-top:5px; margin-left: 15px;"/>
+        style="margin-top:5px; margin-left: 15px;" OnClick="btn_emp_addr_Click"/>
 
 
     <h1 class="header">ADDRESSES</h1>
@@ -46,8 +46,4 @@
 
     <asp:SqlDataSource ID="ds_addr" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Employees.emp_id, Employees.emp_name, Employees.emp_surname, Addresses.addr_country, Addresses.addr_city, Addresses.addr_street, Addresses.addr_house, Addresses.addr_zipcode FROM Employees INNER JOIN Addresses ON Employees.emp_addr_id = Addresses.addr_id">
     </asp:SqlDataSource>
-
-
-    <asp:Button ID="btn_add_dept" runat="server" Text="Add" CssClass="button"
-        style="width: 80px; height: 30px; float: right; margin-right: 50px;"/>
 </asp:Content>

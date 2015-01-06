@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class departments {
+    public partial class Departments {
         
         /// <summary>
         /// gv_depts control.

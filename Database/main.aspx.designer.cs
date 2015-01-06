@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class main {
+    public partial class MainPg {
         
         /// <summary>
         /// form1 control.

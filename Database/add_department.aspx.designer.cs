@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class add_department {
+    public partial class Add_department {
         
         /// <summary>
         /// lbl_dept_name control.

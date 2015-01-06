@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class add_phone {
+    public partial class Add_phone {
         
         /// <summary>
         /// lbl_phone control.

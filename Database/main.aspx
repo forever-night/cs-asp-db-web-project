@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="Database.main" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="Database.MainPg" %>
 
 <!DOCTYPE html>
 
@@ -17,15 +17,15 @@
             CssClass="label" Width="780" style="text-align: right;"></asp:Label>
 
         <asp:Button ID="btn_logout" runat="server" Text="Log Out" CssClass="button"
-            style="width: 60px; height: 25px; font-size: 12px; float: right; margin: 10px 5px;"/>
+            style="width: 60px; height: 25px; font-size: 12px; float: right; margin: 10px 5px;" OnClick="btn_logout_Click"/>
 
 
         <div style="width: 350px; margin: auto; margin-top: 50px;">
             <asp:Button ID="btn_depts" runat="server" Text="Departments" CssClass="button big"
-                Font-Size="20px"/>
+                Font-Size="20px" OnClick="btn_depts_Click"/>
             <br>
             <asp:Button ID="btn_emps" runat="server" Text="Employees" CssClass="button big"
-                Font-Size="20px"/>
+                Font-Size="20px" OnClick="btn_emps_Click"/>
         </div>
 
     </div>

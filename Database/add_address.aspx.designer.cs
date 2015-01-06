@@ -10,7 +10,7 @@
 namespace Database {
     
     
-    public partial class add_address {
+    public partial class Add_address {
         
         /// <summary>
         /// lbl_country control.

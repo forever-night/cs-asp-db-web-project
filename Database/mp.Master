@@ -18,12 +18,12 @@
             CssClass="label" Width="780" style="text-align: right;"></asp:Label>
 
         <asp:Button ID="btn_logout" runat="server" Text="Log Out" CssClass="button"
-            style="width: 60px; height: 25px; font-size: 12px; float: right; margin: 10px 5px;"/>
+            style="width: 60px; height: 25px; font-size: 12px; float: right; margin: 10px 5px;" OnClick="btn_logout_Click"/>
         
 
         <div class="navigation">
             <asp:Button ID="btn_link_main" runat="server" Text="Main" CssClass="button"
-                style="width: 80px; height: 30px;"/>
+                style="width: 80px; height: 30px;" OnClick="btn_link_main_Click"/>
         </div>
 
 

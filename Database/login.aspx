@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Database.login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Database.Login" %>
 
 <!DOCTYPE html>
 
@@ -26,7 +26,7 @@
         </asp:Label>
         
 
-        <asp:Button ID="btn_login" runat="server" CssClass="button small" Text="Log In" />
+        <asp:Button ID="btn_login" runat="server" CssClass="button small" Text="Log In" OnClick="btn_login_Click" />
     </div>
     </form>
 

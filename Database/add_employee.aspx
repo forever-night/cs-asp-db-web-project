@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Add employee" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="add_employee.aspx.cs" Inherits="Database.add_employee" %>
+﻿<%@ Page Title="Add employee" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Add_employee.aspx.cs" Inherits="Database.Add_employee" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -47,7 +47,7 @@
         <asp:Label ID="lbl_status" runat="server" CssClass="label" Width="650px"></asp:Label>
 
 
-        <asp:Button ID="btn_next" runat="server" Text="Next" CssClass="button button2" style="margin-right: 70px;"/>
-        <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CssClass="button button2"/>
+        <asp:Button ID="btn_next" runat="server" Text="Next" CssClass="button button2" style="margin-right: 70px;" OnClick="btn_next_Click"/>
+        <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CssClass="button button2" OnClick="btn_cancel_Click"/>
     </div>
 </asp:Content>
