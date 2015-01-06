@@ -11,18 +11,21 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+			gv_emp_addr.DataBind();
         }
+
 
         protected void btn_emps_Click(object sender, EventArgs e)
         {
             Server.Transfer("Emps.aspx");
         }
 
+
         protected void btn_emp_phones_Click(object sender, EventArgs e)
         {
             Server.Transfer("Phones.aspx");
         }
+
 
         protected void btn_emp_addr_Click(object sender, EventArgs e)
         {

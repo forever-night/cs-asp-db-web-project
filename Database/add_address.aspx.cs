@@ -16,6 +16,7 @@ namespace Database
 
         }
 
+
         protected void btn_cancel_Click(object sender, EventArgs e)
         {
             // TODO remove data from previous form
@@ -28,17 +29,18 @@ namespace Database
             tb_zip.Text = String.Empty;
 
 
-            lbl_status.ForeColor = System.Drawing.Color.FromArgb(555555);
             lbl_status.Text = String.Empty;
 
 
             Server.Transfer("Emps.aspx", false);
         }
 
+
         protected void btn_back_Click(object sender, EventArgs e)
         {
             Server.Transfer("Add_employee.aspx", true);
         }
+
 
         protected void btn_next_Click(object sender, EventArgs e)
         {
@@ -46,17 +48,12 @@ namespace Database
                 || tb_street.Text.Equals(String.Empty) || tb_house.Text.Equals(String.Empty)
                 || tb_zip.Text.Equals(String.Empty))
             {
-                lbl_status.ForeColor = System.Drawing.Color.DarkRed;
                 lbl_status.Text = "Please, fill every field.";
             }
             else if (!Regex.IsMatch(tb_zip.Text, @"[0-9]+"))
-            {
-                lbl_status.ForeColor = System.Drawing.Color.DarkRed;
                 lbl_status.Text = "Field ZipCode must contain only numbers.";
-            }
             else
             {
-                lbl_status.ForeColor = System.Drawing.Color.FromArgb(555555);
                 lbl_status.Text = String.Empty;
 
 

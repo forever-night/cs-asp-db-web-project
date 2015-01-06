@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Database
 {
     public partial class mp : System.Web.UI.MasterPage
@@ -17,10 +18,12 @@ namespace Database
             // this.lbl_user.Text += username;
         }
 
+
         protected void btn_link_main_Click(object sender, EventArgs e)
         {
             Server.Transfer("Main.aspx", false);
         }
+
 
         protected void btn_logout_Click(object sender, EventArgs e)
         {

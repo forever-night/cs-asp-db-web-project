@@ -17,15 +17,18 @@ namespace Database
             // this.lbl_user.Text += username;
         }
 
+
         protected void btn_depts_Click(object sender, EventArgs e)
         {
             Server.Transfer("Departments.aspx", false);
         }
 
+
         protected void btn_emps_Click(object sender, EventArgs e)
         {
             Server.Transfer("Emps.aspx", false);
         }
+
 
         protected void btn_logout_Click(object sender, EventArgs e)
         {

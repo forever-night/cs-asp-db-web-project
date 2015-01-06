@@ -31,76 +31,76 @@ namespace Database
         }
 
 
-        protected void ClearForm(Forms form)
-        {
-            if (form == Forms.Employees)
-            {
-                this.dl_dept_id.ClearSelection();
+		//protected void ClearForm(Forms form)
+		//{
+		//	if (form == Forms.Employees)
+		//	{
+		//		this.dl_dept_id.ClearSelection();
 
-                this.tb_emp_name.Text = String.Empty;
-                this.tb_emp_surname.Text = String.Empty;
-                this.tb_emp_personal_id.Text = String.Empty;
-            }
-            else if (form == Forms.Addresses)
-            {
-                this.dl_addr_emp_id.ClearSelection();
+		//		this.tb_emp_name.Text = String.Empty;
+		//		this.tb_emp_surname.Text = String.Empty;
+		//		this.tb_emp_personal_id.Text = String.Empty;
+		//	}
+		//	else if (form == Forms.Addresses)
+		//	{
+		//		this.dl_addr_emp_id.ClearSelection();
 
-                this.tb_country.Text = String.Empty;
-                this.tb_city.Text = String.Empty;
-                this.tb_street.Text = String.Empty;
-                this.tb_house.Text = String.Empty;
-                this.tb_zipcode.Text = String.Empty;
-            }
-            else if (form == Forms.Telephones)
-            {
-                this.dl_tel_emp_id.ClearSelection();
+		//		this.tb_country.Text = String.Empty;
+		//		this.tb_city.Text = String.Empty;
+		//		this.tb_street.Text = String.Empty;
+		//		this.tb_house.Text = String.Empty;
+		//		this.tb_zipcode.Text = String.Empty;
+		//	}
+		//	else if (form == Forms.Telephones)
+		//	{
+		//		this.dl_tel_emp_id.ClearSelection();
 
-                this.tb_tel_number.Text = String.Empty;
-            }
-        }
-
-
-        protected void ChangeStatus(Label status, Status st)
-        {
-            if (st == Status.Clear)
-            {
-                status.ForeColor = System.Drawing.Color.DarkGreen;
-                status.Text = "form cleared";
-            }
-            else if (st == Status.Insert)
-            {
-                status.ForeColor = System.Drawing.Color.DarkGreen;
-                status.Text = "data inserted";
-            }
-            else if (st == Status.NoNumbers)
-            {
-                status.ForeColor = System.Drawing.Color.Crimson;
-                status.Text = "field should contain only numbers";
-            }
-            else if (st == Status.Warning)
-            {
-                status.ForeColor = System.Drawing.Color.Crimson;
-                status.Text = "every field shoud be filled";
-            }
-        }
+		//		this.tb_tel_number.Text = String.Empty;
+		//	}
+		//}
 
 
-        protected void btn_clear_emp_Click(object sender, EventArgs e)
-        {
-            ClearForm(Forms.Employees);
+		//protected void ChangeStatus(Label status, Status st)
+		//{
+		//	if (st == Status.Clear)
+		//	{
+		//		status.ForeColor = System.Drawing.Color.DarkGreen;
+		//		status.Text = "form cleared";
+		//	}
+		//	else if (st == Status.Insert)
+		//	{
+		//		status.ForeColor = System.Drawing.Color.DarkGreen;
+		//		status.Text = "data inserted";
+		//	}
+		//	else if (st == Status.NoNumbers)
+		//	{
+		//		status.ForeColor = System.Drawing.Color.Crimson;
+		//		status.Text = "field should contain only numbers";
+		//	}
+		//	else if (st == Status.Warning)
+		//	{
+		//		status.ForeColor = System.Drawing.Color.Crimson;
+		//		status.Text = "every field shoud be filled";
+		//	}
+		//}
 
-            ChangeStatus(this.lbl_status_emp, Status.Clear);
-        }
+
+		//protected void btn_clear_emp_Click(object sender, EventArgs e)
+		//{
+		//	ClearForm(Forms.Employees);
+
+		//	ChangeStatus(this.lbl_status_emp, Status.Clear);
+		//}
 
 
         protected void btn_insert_emp_Click(object sender, EventArgs e)
         {
             if (this.tb_emp_name.Text == String.Empty || this.tb_emp_surname.Text == String.Empty ||
                 this.tb_emp_personal_id.Text == String.Empty || this.dl_dept_id.SelectedValue == "empty")
-                ChangeStatus(this.lbl_status_emp, Status.Warning);
+				//ChangeStatus(this.lbl_status_emp, Status.Warning);
             else if (Regex.Match(this.tb_emp_personal_id.Text, @"^[0-9]+$").Success == false)
             {
-                ChangeStatus(this.lbl_status_emp, Status.NoNumbers);
+				//ChangeStatus(this.lbl_status_emp, Status.NoNumbers);
                 this.lbl_status_emp.Text += ": PESEL";
             }
             else
@@ -123,21 +123,21 @@ namespace Database
                     sqlCommand.ExecuteNonQuery();
                 }
 
-                ClearForm(Forms.Employees);
+				//ClearForm(Forms.Employees);
 
-                ChangeStatus(this.lbl_status_emp, Status.Insert);
+				//ChangeStatus(this.lbl_status_emp, Status.Insert);
 
                 this.EmployeesGridView.DataBind();
             }
         }
 
 
-        protected void btn_clear_addr_Click(object sender, EventArgs e)
-        {
-            ClearForm(Forms.Addresses);
+		//protected void btn_clear_addr_Click(object sender, EventArgs e)
+		//{
+		//	ClearForm(Forms.Addresses);
 
-            ChangeStatus(this.lbl_status_addr, Status.Clear);
-        }
+		//	ChangeStatus(this.lbl_status_addr, Status.Clear);
+		//}
 
 
         protected void btn_insert_addr_Click(object sender, EventArgs e)
@@ -183,12 +183,12 @@ namespace Database
         }
 
 
-        protected void btn_clear_tel_Click(object sender, EventArgs e)
-        {
-            ClearForm(Forms.Telephones);
+		//protected void btn_clear_tel_Click(object sender, EventArgs e)
+		//{
+		//	ClearForm(Forms.Telephones);
 
-            ChangeStatus(this.lbl_status_tel, Status.Clear);
-        }
+		//	ChangeStatus(this.lbl_status_tel, Status.Clear);
+		//}
 
 
         protected void btn_insert_tel_Click(object sender, EventArgs e)

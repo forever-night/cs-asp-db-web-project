@@ -47,7 +47,7 @@
         <br>
 
 
-        <asp:Label ID="lbl_status" runat="server" CssClass="label" Width="650px"></asp:Label>
+        <asp:Label ID="lbl_status" runat="server" CssClass="label status" Width="650px"></asp:Label>
 
 
         <asp:Button ID="btn_next" runat="server" Text="Next" CssClass="button button2" style="margin-right: 70px;" OnClick="btn_next_Click"/>
