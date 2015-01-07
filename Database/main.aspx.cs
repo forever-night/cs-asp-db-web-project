@@ -15,18 +15,24 @@ namespace Database
             // string username;
             //
             // this.lbl_user.Text += username;
+
+
+			// TODO if not logged in redirect to login page
+			// Server.Transfer("Login.aspx");
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
         }
 
 
         protected void btn_depts_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Departments.aspx", false);
+            Server.Transfer("Departments.aspx");
         }
 
 
         protected void btn_emps_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Emps.aspx", false);
+            Server.Transfer("Emps.aspx");
         }
 
 
@@ -36,7 +42,9 @@ namespace Database
 
             this.lbl_user.Text = "You've logged in as ";
 
-            Server.Transfer("Login.aspx", false);
+			Session.Clear();
+
+            Server.Transfer("Login.aspx");
         }
     }
 }

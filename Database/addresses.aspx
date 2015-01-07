@@ -20,6 +20,7 @@
 
     <asp:GridView ID="gv_emp_addr" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="ds_addr">
         <Columns>
+
             <asp:BoundField DataField="emp_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="emp_id" >
                 <HeaderStyle HorizontalAlign="Center" />
                 <ItemStyle HorizontalAlign="Center" />
@@ -40,6 +41,15 @@
                 <HeaderStyle HorizontalAlign="Center" />
                 <ItemStyle HorizontalAlign="Center" />
             </asp:BoundField>
+
+
+			<asp:CommandField ShowEditButton="True" ItemStyle-HorizontalAlign="Center">
+				<ItemStyle Width="50px" />
+			</asp:CommandField>
+
+			<asp:CommandField ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center">
+				<ItemStyle Width="50px" />
+			</asp:CommandField>
 
         </Columns>
     </asp:GridView>

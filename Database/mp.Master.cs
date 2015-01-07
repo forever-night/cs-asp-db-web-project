@@ -16,6 +16,12 @@ namespace Database
             // string username;
             //
             // this.lbl_user.Text += username;
+
+
+			// TODO if not logged in redirect to login page
+			// Server.Transfer("Login.aspx");
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
         }
 
 

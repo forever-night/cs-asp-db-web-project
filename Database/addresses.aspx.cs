@@ -11,6 +11,10 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
+
+
 			gv_emp_addr.DataBind();
         }
 

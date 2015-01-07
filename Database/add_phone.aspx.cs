@@ -13,7 +13,8 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
         }
 
 
@@ -23,12 +24,19 @@ namespace Database
             lbl_status.Text = String.Empty;
 
 
+			SessionRemove(
+				new string[] {"empname", "empsurname", "emppersid", "empdept",
+					"country", "city", "street", "house", "zip", "phone"});
+
+
             Server.Transfer("Emps.aspx", false);
         }
 
 
         protected void btn_back_Click(object sender, EventArgs e)
         {
+			Session.Remove("phone");
+
             Server.Transfer("Add_address.aspx", true);
         }
 
@@ -50,5 +58,13 @@ namespace Database
                 Server.Transfer("Add_checking.aspx", true);
             }
         }
+
+
+		protected void SessionRemove(string[] args)
+		{
+			foreach (string s in args)
+				if (Session[s] != null)
+					Session.Remove(s);
+		}
     }
 }

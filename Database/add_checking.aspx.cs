@@ -20,6 +20,10 @@ namespace Database
 
         protected void Page_Load(object sender, EventArgs e)
         {
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
+
+
 			tb_emp_name.Text = (string)Session["empname"];
 			tb_emp_surname.Text = (string)Session["empsurname"];
 			tb_emp_pers_id.Text = (string)Session["emppersid"];
@@ -45,8 +49,14 @@ namespace Database
             tb_zip.Text = String.Empty;
             tb_phone.Text = String.Empty;
 
+			dl_emp_dept.SelectedValue = "empty";
 
             lbl_status.Text = String.Empty;
+
+			SessionRemoveAll();
+
+
+			Server.Transfer("Emps.aspx");
         }
 
 
@@ -135,7 +145,25 @@ namespace Database
 
 
                 Server.Transfer("Emps.aspx", false);
+
+
+				SessionRemoveAll();
             }
         }
+
+
+		protected void SessionRemoveAll()
+		{
+				Session.Remove("empname");
+				Session.Remove("empsurname");
+				Session.Remove("emppersid");
+				Session.Remove("empdept");
+				Session.Remove("country");
+				Session.Remove("city");
+				Session.Remove("street");
+				Session.Remove("house");
+				Session.Remove("zip");
+				Session.Remove("phone");
+		}
     }
 }

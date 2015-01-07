@@ -13,6 +13,21 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Login.aspx");
+
+
+			if (Session["empname"] != null)
+				tb_emp_name.Text = (string)Session["empname"];
+
+			if (Session["empsurname"] != null)
+				tb_emp_surname.Text = (string)Session["empsurname"];
+
+			if (Session["emppersid"] != null)
+				tb_emp_pers_id.Text = (string)Session["emppersid"];
+
+			if (Session["empdept"] != null)
+				dl_emp_dept.Text = (string)Session["empdept"];
 
         }
 
@@ -26,6 +41,11 @@ namespace Database
 
 
             lbl_status.Text = String.Empty;
+
+
+			SessionRemove(
+				new string[]{"empname", "empsurname", "emppersid", "empdept",
+				"country", "city", "street", "house", "zip", "phone"});
 
 
             Server.Transfer("Emps.aspx", false);
@@ -57,5 +77,13 @@ namespace Database
                 Server.Transfer("Add_address.aspx", true);
             }
         }
+
+
+		protected void SessionRemove(string[] args)
+		{
+			foreach (string s in args)
+				if (Session[s] != null)
+					Session.Remove(s);
+		}
     }
 }

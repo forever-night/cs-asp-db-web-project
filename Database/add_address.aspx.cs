@@ -13,13 +13,32 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
 
+
+			if (Session["country"] != null)
+				tb_country.Text = (string)Session["country"];
+
+			if (Session["city"] != null)
+				tb_city.Text = (string)Session["city"];
+
+			if (Session["street"] != null)
+				tb_street.Text = (string)Session["street"];
+
+			if (Session["house"] != null)
+				tb_house.Text = (string)Session["house"];
+
+			if (Session["zip"] != null)
+				tb_zip.Text = (string)Session["zip"];
         }
 
 
         protected void btn_cancel_Click(object sender, EventArgs e)
         {
-            // TODO remove data from previous form
+			SessionRemove(
+				new string[] {"empname", "empsurname", "emppersid", "empdept",
+				"country", "city", "street", "house", "zip", "phone"});		
 
 
             tb_country.Text = String.Empty;
@@ -38,6 +57,9 @@ namespace Database
 
         protected void btn_back_Click(object sender, EventArgs e)
         {
+			SessionRemove(
+				new string[]{"country", "city", "street", "house", "zip", "phone"});
+
             Server.Transfer("Add_employee.aspx", true);
         }
 
@@ -67,5 +89,13 @@ namespace Database
                 Server.Transfer("Add_phone.aspx", true);
             }
         }
+
+
+		protected void SessionRemove(string[] args)
+		{
+			foreach (string s in args)
+				if (Session[s] != null)
+					Session.Remove(s);
+		}
     }
 }

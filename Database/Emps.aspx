@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Employees" Language="C#" MasterPageFile="~/mp.Master" AutoEventWireup="true" CodeBehind="Emps.aspx.cs" Inherits="Database.Emps" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="tables.css"/>
 </asp:Content>
@@ -19,6 +20,7 @@
 
     <asp:GridView ID="gv_emps" CssClass="table" runat="server" AutoGenerateColumns="False" DataKeyNames="emp_id" DataSourceID="ds_emps" Font-Names="Verdana" Font-Size="10pt">
         <Columns>
+
             <asp:BoundField DataField="emp_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="emp_id">
                 <HeaderStyle HorizontalAlign="Center" />
                 <ItemStyle HorizontalAlign="Center" />
@@ -27,12 +29,23 @@
             <asp:BoundField DataField="emp_name" HeaderText="Name" SortExpression="emp_name" />
             <asp:BoundField DataField="emp_surname" HeaderText="Surname" SortExpression="emp_surname" />
 
+
             <asp:BoundField DataField="emp_personal_id" HeaderText="PESEL" SortExpression="emp_personal_id" >
                 <HeaderStyle HorizontalAlign="Center" />
                 <ItemStyle HorizontalAlign="Center" />
             </asp:BoundField>
 
+
             <asp:BoundField DataField="dept_name" HeaderText="Department" SortExpression="dept_name" />
+
+
+			<asp:CommandField ShowEditButton="True" ItemStyle-HorizontalAlign="Center">
+				<ItemStyle Width="50px" />
+			</asp:CommandField>
+
+			<asp:CommandField ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center">
+				<ItemStyle Width="50px" />
+			</asp:CommandField>
 
         </Columns>
     </asp:GridView>

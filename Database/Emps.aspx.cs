@@ -11,31 +11,35 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
+
+
 			gv_emps.DataBind();
         }
 
 
         protected void btn_emps_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Emps.aspx", false);
+            Server.Transfer("Emps.aspx");
         }
 
 
         protected void btn_emp_phones_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Phones.aspx", false);
+            Server.Transfer("Phones.aspx");
         }
 
 
         protected void btn_emp_addr_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Addresses.aspx", false);
+            Server.Transfer("Addresses.aspx");
         }
 
 
         protected void btn_add_emp_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Add_employee.aspx", false);
+            Server.Transfer("Add_employee.aspx");
         }
     }
 }

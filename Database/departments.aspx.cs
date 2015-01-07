@@ -12,13 +12,17 @@ namespace Database
     {		
         protected void Page_Load(object sender, EventArgs e)
         {
+			//if ((int)Session["Role"] == -1)
+			//	Server.Transfer("Load.aspx");
+
+
 			gv_depts.DataBind();
         }
 
 
         protected void btn_add_dept_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Add_department.aspx", false);
+            Server.Transfer("Add_department.aspx");
         }
     }
 }
