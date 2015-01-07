@@ -57,7 +57,11 @@ namespace Database
                 lbl_status.Text = String.Empty;
 
 
-                // TODO pass data to next page
+				Session["country"] = tb_country.Text;
+				Session["city"] = tb_city.Text;
+				Session["street"] = tb_street.Text;
+				Session["house"] = tb_house.Text;
+				Session["zip"] = tb_zip.Text;
 
 
                 Server.Transfer("Add_phone.aspx", true);

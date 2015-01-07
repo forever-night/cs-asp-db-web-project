@@ -20,7 +20,16 @@ namespace Database
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+			tb_emp_name.Text = (string)Session["empname"];
+			tb_emp_surname.Text = (string)Session["empsurname"];
+			tb_emp_pers_id.Text = (string)Session["emppersid"];
+			dl_emp_dept.SelectedValue = (string)Session["empdept"];
+			tb_country.Text = (string)Session["country"];
+			tb_city.Text = (string)Session["city"];
+			tb_street.Text = (string)Session["street"];
+			tb_house.Text = (string)Session["house"];
+			tb_zip.Text = (string)Session["zip"];
+			tb_phone.Text = (string)Session["phone"];
         }
 
 
@@ -53,9 +62,10 @@ namespace Database
             }
             else if (!Regex.IsMatch(tb_emp_pers_id.Text, @"[0-9]+")
                 || !Regex.IsMatch(tb_zip.Text, @"[0-9]+")
-                || !Regex.IsMatch(tb_phone.Text, @"[0-9]+"))
+                || !Regex.IsMatch(tb_phone.Text, @"[0-9]+")
+				|| !Regex.IsMatch(tb_house.Text, @"[0-9]+"))
             {
-                lbl_status.Text = "Fields PESEL, ZipCode and Phone must contain only numbers.";
+                lbl_status.Text = "Fields PESEL, House, ZipCode and Phone must contain only numbers.";
             }
 			else if (dl_emp_dept.SelectedValue.Equals("empty"))
 				lbl_status.Text = "Please, select a department.";
@@ -80,7 +90,8 @@ namespace Database
 					sqlCommand.Connection.Close();
 
 
-					txtSqlCommand = "SELECT emp_id FROM Employees WHERE emp_personal_id = @emp_pers_id;";
+					txtSqlCommand = "SELECT emp_id FROM Employees WHERE emp_personal_id = @emp_pers_id AND emp_tel_id IS NULL;";
+
 					sqlCommand = new SqlCommand(txtSqlCommand, sqlConnect);
 					
 					sqlCommand.Parameters.AddWithValue("@emp_pers_id", Int32.Parse(tb_emp_pers_id.Text));
@@ -101,7 +112,7 @@ namespace Database
 					sqlCommand.Parameters.AddWithValue("@addr_country", tb_country.Text);
 					sqlCommand.Parameters.AddWithValue("@addr_city", tb_city.Text);
 					sqlCommand.Parameters.AddWithValue("@addr_street", tb_street.Text);
-					sqlCommand.Parameters.AddWithValue("@addr_house", tb_house.Text);
+					sqlCommand.Parameters.AddWithValue("@addr_house", Int32.Parse(tb_house.Text));
 					sqlCommand.Parameters.AddWithValue("@addr_zipcode", Int32.Parse(tb_zip.Text));
 					sqlCommand.Parameters.AddWithValue("@tel_num", Int32.Parse(tb_phone.Text));
 					

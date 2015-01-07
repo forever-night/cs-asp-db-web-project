@@ -48,11 +48,10 @@ namespace Database
                 lbl_status.Text = String.Empty;
 
 
-                // TODO pass data to next page
-                //emp_name = tb_emp_name.Text;
-                //emp_surname = tb_emp_surname.Text;
-                //emp_pers_id = tb_emp_pers_id.Text;
-                //emp_dept_value = dl_emp_dept.SelectedValue;
+				Session["empname"] = tb_emp_name.Text;
+				Session["empsurname"] = tb_emp_surname.Text;
+				Session["emppersid"] = tb_emp_pers_id.Text;
+				Session["empdept"] = dl_emp_dept.Text;
 
 
                 Server.Transfer("Add_address.aspx", true);

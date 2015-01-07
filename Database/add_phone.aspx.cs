@@ -41,10 +41,10 @@ namespace Database
                 lbl_status.Text = "Field must contain only numbers.";
             else
             {
-                // TODO pass data to the next page
-
-
                 lbl_status.Text = String.Empty;
+
+
+				Session["phone"] = tb_phone.Text;
 
 
                 Server.Transfer("Add_checking.aspx", true);
