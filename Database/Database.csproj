@@ -64,6 +64,10 @@
     <Content Include="add.css" />
     <Content Include="Addresses.aspx" />
     <Content Include="Add_checking.aspx" />
+    <Content Include="App_Data\SqlDatabase.mdf" />
+    <Content Include="App_Data\SqlDatabase_log.ldf">
+      <DependentUpon>SqlDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Departments.aspx" />
     <Content Include="Emps.aspx" />
     <Content Include="Global.asax" />
@@ -81,10 +85,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SqlDatabase.mdf" />
-    <Content Include="App_Data\SqlDatabase_log.ldf">
-      <DependentUpon>SqlDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Phones.aspx" />
     <Content Include="tables.css" />
     <Content Include="Web.config" />
