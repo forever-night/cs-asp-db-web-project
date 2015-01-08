@@ -12,32 +12,27 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // TODO get username
-            // string username;
-            //
-            // this.lbl_user.Text += username;
-
-
-			// TODO if not logged in redirect to login page
-			// Server.Transfer("Login.aspx");
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			if ((int)Session["Role"] < 0)
+				Response.Redirect("Login.aspx");
+			else
+				this.lbl_user.Text += (string)Session["User"];
         }
 
 
         protected void btn_link_main_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Main.aspx", false);
+            Response.Redirect("Main.aspx");
         }
 
 
         protected void btn_logout_Click(object sender, EventArgs e)
         {
-            // TODO logout
-
             this.lbl_user.Text = "You've logged in as ";
 
-            Server.Transfer("Login.aspx", false);
+			Session.Clear();
+			Session.Abandon();
+
+            Response.Redirect("Login.aspx");
         }
     }
 }

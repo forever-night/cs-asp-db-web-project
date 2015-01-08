@@ -12,8 +12,23 @@ namespace Database
     {		
         protected void Page_Load(object sender, EventArgs e)
         {
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			switch ((int)Session["Role"])
+			{
+				case 10:
+					Response.Redirect("Main.aspx");
+					break;
+				case 50:
+					btn_add_dept.Enabled = false;
+					btn_add_dept.Visible = false;
+					break;
+				case 100:
+					btn_add_dept.Enabled = true;
+					btn_add_dept.Visible = true;
+					break;
+				default:
+					Response.Redirect("Login.aspx");
+					break;
+			}
 
 
 			gv_depts.DataBind();
@@ -22,7 +37,7 @@ namespace Database
 
         protected void btn_add_dept_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Add_department.aspx");
+            Response.Redirect("Add_department.aspx");
         }
     }
 }

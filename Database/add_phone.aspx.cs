@@ -13,8 +13,10 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			if ((int)Session["Role"] < 0)
+				Response.Redirect("Login.aspx");
+			else if ((int)Session["Role"] == 10)
+				Response.Redirect("Emps.aspx");
         }
 
 
@@ -29,7 +31,7 @@ namespace Database
 					"country", "city", "street", "house", "zip", "phone"});
 
 
-            Server.Transfer("Emps.aspx", false);
+            Response.Redirect("Emps.aspx");
         }
 
 
@@ -37,7 +39,7 @@ namespace Database
         {
 			Session.Remove("phone");
 
-            Server.Transfer("Add_address.aspx", true);
+            Response.Redirect("Add_address.aspx");
         }
 
 
@@ -55,7 +57,7 @@ namespace Database
 				Session["phone"] = tb_phone.Text;
 
 
-                Server.Transfer("Add_checking.aspx", true);
+                Response.Redirect("Add_checking.aspx");
             }
         }
 

@@ -5,46 +5,51 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Database
 {
     public partial class MainPg : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // TODO get username
-            // string username;
-            //
-            // this.lbl_user.Text += username;
-
-
-			// TODO if not logged in redirect to login page
-			// Server.Transfer("Login.aspx");
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			switch ((int)Session["Role"])
+			{
+				case -1:
+					Response.Redirect("Login.aspx");
+					break;
+				case 10:
+					this.lbl_user.Text += (string)Session["User"];
+					btn_depts.Enabled = false;
+					btn_depts.Visible = false;
+					break;
+				case 50:
+				case 100:
+					this.lbl_user.Text += (string)Session["User"];
+					break;
+			}		
         }
 
 
         protected void btn_depts_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Departments.aspx");
+            Response.Redirect("Departments.aspx");
         }
 
 
         protected void btn_emps_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Emps.aspx");
+            Response.Redirect("Emps.aspx");
         }
 
 
         protected void btn_logout_Click(object sender, EventArgs e)
         {
-            // TODO logout
-
             this.lbl_user.Text = "You've logged in as ";
 
+			Session.Abandon();
 			Session.Clear();
 
-            Server.Transfer("Login.aspx");
+            Response.Redirect("Login.aspx");
         }
     }
 }

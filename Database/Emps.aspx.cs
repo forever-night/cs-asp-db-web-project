@@ -11,8 +11,27 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			switch ((int)Session["Role"])
+			{
+				case -1:
+					Response.Redirect("Login.aspx");
+					break;
+				case 10:
+					btn_add_emp.Enabled = false;
+					btn_add_emp.Visible = false;
+
+					btn_emp_addr.Enabled = false;
+					btn_emp_addr.Visible = false;
+
+					btn_emp_phones.Enabled = false;
+					btn_emp_phones.Visible = false;
+
+					break;
+				case 50:
+					btn_add_emp.Enabled = false;
+					btn_add_emp.Visible = false;
+					break;
+			}
 
 
 			gv_emps.DataBind();
@@ -21,25 +40,25 @@ namespace Database
 
         protected void btn_emps_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Emps.aspx");
+            Response.Redirect("Emps.aspx");
         }
 
 
         protected void btn_emp_phones_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Phones.aspx");
+            Response.Redirect("Phones.aspx");
         }
 
 
         protected void btn_emp_addr_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Addresses.aspx");
+            Response.Redirect("Addresses.aspx");
         }
 
 
         protected void btn_add_emp_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Add_employee.aspx");
+            Response.Redirect("Add_employee.aspx");
         }
     }
 }

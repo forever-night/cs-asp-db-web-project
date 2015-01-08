@@ -18,8 +18,7 @@
 
 
         <p class="label">password</p>
-        <asp:TextBox ID="tb_pwd" runat="server" CssClass="textbox"></asp:TextBox>
-
+        <asp:TextBox ID="tb_pwd" runat="server" CssClass="textbox" TextMode="Password"></asp:TextBox>
 
         <asp:Label ID="lbl_status" runat="server" Text=""
             CssClass="label" Width="320px" style="padding-top: 20px;">

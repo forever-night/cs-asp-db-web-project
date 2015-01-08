@@ -19,8 +19,10 @@ namespace Database
 
         protected void Page_Load(object sender, EventArgs e)
         {
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			if ((int)Session["Role"] < 0)
+				Response.Redirect("Login.aspx");
+			else if ((int)Session["Role"] != 100)
+				Response.Redirect("Departments.aspx");
         }
 
 
@@ -28,13 +30,12 @@ namespace Database
         {
             tb_dept_name.Text = String.Empty;
 
-            Server.Transfer("Departments.aspx", false);
+            Response.Redirect("Departments.aspx");
         }
 
 
         protected void btn_finish_Click(object sender, EventArgs e)
         {
-            // TODO sql insert
 			using (SqlConnection sqlConnect = new SqlConnection(txtSqlConnect))
 			{
 				txtSqlCommand = "INSERT INTO Departments(dept_name) VALUES (@dept_name);";
@@ -48,7 +49,7 @@ namespace Database
 			}
 
 
-            Server.Transfer("Departments.aspx", false);
+            Response.Redirect("Departments.aspx", false);
         }
     }
 }

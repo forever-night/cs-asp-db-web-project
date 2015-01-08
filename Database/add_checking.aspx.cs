@@ -20,8 +20,10 @@ namespace Database
 
         protected void Page_Load(object sender, EventArgs e)
         {
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			if ((int)Session["Role"] < 0)
+				Response.Redirect("Login.aspx");
+			else if ((int)Session["Role"] == 10)
+				Response.Redirect("Emps.aspx");
 
 
 			tb_emp_name.Text = (string)Session["empname"];
@@ -56,7 +58,7 @@ namespace Database
 			SessionRemoveAll();
 
 
-			Server.Transfer("Emps.aspx");
+			Response.Redirect("Emps.aspx");
         }
 
 
@@ -144,7 +146,7 @@ namespace Database
                 lbl_status.Text = String.Empty;
 
 
-                Server.Transfer("Emps.aspx", false);
+                Response.Redirect("Emps.aspx");
 
 
 				SessionRemoveAll();

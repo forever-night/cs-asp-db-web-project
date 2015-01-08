@@ -13,8 +13,10 @@ namespace Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-			//if ((int)Session["Role"] == -1)
-			//	Server.Transfer("Load.aspx");
+			if ((int)Session["Role"] < 0)
+				Response.Redirect("Login.aspx");
+			else if ((int)Session["Role"] == 10)
+				Response.Redirect("Emps.aspx");
 
 
 			if (Session["country"] != null)
@@ -51,7 +53,7 @@ namespace Database
             lbl_status.Text = String.Empty;
 
 
-            Server.Transfer("Emps.aspx", false);
+            Response.Redirect("Emps.aspx");
         }
 
 
@@ -60,7 +62,7 @@ namespace Database
 			SessionRemove(
 				new string[]{"country", "city", "street", "house", "zip", "phone"});
 
-            Server.Transfer("Add_employee.aspx", true);
+            Response.Redirect("Add_employee.aspx");
         }
 
 
@@ -86,7 +88,7 @@ namespace Database
 				Session["zip"] = tb_zip.Text;
 
 
-                Server.Transfer("Add_phone.aspx", true);
+                Response.Redirect("Add_phone.aspx", true);
             }
         }
 
