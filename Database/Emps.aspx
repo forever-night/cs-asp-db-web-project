@@ -38,16 +38,8 @@
 
             <asp:BoundField DataField="dept_name" HeaderText="Department" SortExpression="dept_name" />
 
-
-			<asp:CommandField ShowEditButton="True" ItemStyle-HorizontalAlign="Center">
-				<ItemStyle Width="50px" />
-			</asp:CommandField>
-
-			<asp:CommandField ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center">
-				<ItemStyle Width="50px" />
-			</asp:CommandField>
-
         </Columns>
+    	<SelectedRowStyle BackColor="Silver" />
     </asp:GridView>
     
     <asp:SqlDataSource ID="ds_emps" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Employees.emp_id, Employees.emp_name, Employees.emp_surname, Employees.emp_personal_id, Departments.dept_name FROM Employees INNER JOIN Departments ON Employees.emp_dept_id = Departments.dept_id">

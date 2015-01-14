@@ -18,15 +18,6 @@
             </asp:BoundField>
 			
             <asp:BoundField DataField="dept_name" HeaderText="Department" SortExpression="dept_name" />
-
-
-        	<asp:CommandField ShowEditButton="True" ItemStyle-HorizontalAlign="Center">
-				<ItemStyle Width="50px" />
-			</asp:CommandField>
-
-			<asp:CommandField ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center">
-				<ItemStyle Width="50px" />
-			</asp:CommandField>
         </Columns>
     </asp:GridView>
 

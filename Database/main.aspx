@@ -26,6 +26,9 @@
             <br>
             <asp:Button ID="btn_emps" runat="server" Text="Employees" CssClass="button big"
                 Font-Size="20px" OnClick="btn_emps_Click"/>
+			<br>
+			<asp:Button ID="btn_users" runat="server" Text="Users" CssClass="button big"
+                Font-Size="20px" style="margin-bottom: 20px;" OnClick="btn_users_Click"/>
         </div>
 
     </div>

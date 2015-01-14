@@ -21,8 +21,15 @@ namespace Database
 					this.lbl_user.Text += (string)Session["User"];
 					btn_depts.Enabled = false;
 					btn_depts.Visible = false;
+
+					btn_users.Enabled = false;
+					btn_users.Visible = false;
 					break;
 				case 50:
+					this.lbl_user.Text += (string)Session["User"];
+					btn_users.Enabled = false;
+					btn_users.Visible = false;
+					break;
 				case 100:
 					this.lbl_user.Text += (string)Session["User"];
 					break;
@@ -51,5 +58,10 @@ namespace Database
 
             Response.Redirect("Login.aspx");
         }
+
+		protected void btn_users_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("Users.aspx");
+		}
     }
 }

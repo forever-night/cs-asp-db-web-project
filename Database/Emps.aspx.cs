@@ -4,11 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace Database
 {
     public partial class Emps : System.Web.UI.Page
     {
+		string txtSqlConnect = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+	
+
         protected void Page_Load(object sender, EventArgs e)
         {
 			switch ((int)Session["Role"])

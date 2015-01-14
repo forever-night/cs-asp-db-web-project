@@ -42,15 +42,6 @@
                 <ItemStyle HorizontalAlign="Center" />
             </asp:BoundField>
 
-
-			<asp:CommandField ShowEditButton="True" ItemStyle-HorizontalAlign="Center">
-				<ItemStyle Width="50px" />
-			</asp:CommandField>
-
-			<asp:CommandField ShowDeleteButton="True" ItemStyle-HorizontalAlign="Center">
-				<ItemStyle Width="50px" />
-			</asp:CommandField>
-
         </Columns>
     </asp:GridView>
 

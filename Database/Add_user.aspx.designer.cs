@@ -10,60 +10,78 @@
 namespace Database {
     
     
-    public partial class MainPg {
+    public partial class Add_user {
         
         /// <summary>
-        /// form1 control.
+        /// lbl_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lbl_username;
         
         /// <summary>
-        /// lbl_user control.
+        /// tb_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_user;
+        protected global::System.Web.UI.WebControls.TextBox tb_username;
         
         /// <summary>
-        /// btn_logout control.
+        /// lbl_pwd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_logout;
+        protected global::System.Web.UI.WebControls.Label lbl_pwd;
         
         /// <summary>
-        /// btn_depts control.
+        /// tb_pwd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_depts;
+        protected global::System.Web.UI.WebControls.TextBox tb_pwd;
         
         /// <summary>
-        /// btn_emps control.
+        /// lbl_role control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_emps;
+        protected global::System.Web.UI.WebControls.Label lbl_role;
         
         /// <summary>
-        /// btn_users control.
+        /// tb_role control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_users;
+        protected global::System.Web.UI.WebControls.TextBox tb_role;
+        
+        /// <summary>
+        /// btn_finish control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_finish;
+        
+        /// <summary>
+        /// btn_cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_cancel;
     }
 }

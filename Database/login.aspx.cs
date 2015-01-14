@@ -39,12 +39,18 @@ namespace Database
 				if (result >= 0)
 				{
 					SqlCommand sqlCommandRole = new SqlCommand(
-						"SELECT role FROM Users WHERE username = @username", sqlConnect);
+						"SELECT role FROM Users WHERE username = @username AND password = @password", sqlConnect);
 
 					sqlCommandRole.Parameters.AddWithValue("@username", tb_login.Text);
+					sqlCommandRole.Parameters.AddWithValue("@password", tb_pwd.Text);
 
 					Session["Role"] = (int)sqlCommandRole.ExecuteScalar();
 					Session["User"] = tb_login.Text;
+				}
+				else
+				{
+					Session["Role"] = -1;
+					Session["User"] = "";
 				}
 				
 

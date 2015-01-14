@@ -64,6 +64,7 @@
     <Content Include="add.css" />
     <Content Include="Addresses.aspx" />
     <Content Include="Add_checking.aspx" />
+    <Content Include="Add_user.aspx" />
     <Content Include="App_Data\SqlDatabase.mdf" />
     <Content Include="App_Data\SqlDatabase_log.ldf">
       <DependentUpon>SqlDatabase.mdf</DependentUpon>
@@ -87,6 +88,7 @@
   <ItemGroup>
     <Content Include="Phones.aspx" />
     <Content Include="tables.css" />
+    <Content Include="Users.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +133,13 @@
     </Compile>
     <Compile Include="Add_checking.aspx.designer.cs">
       <DependentUpon>Add_checking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Add_user.aspx.cs">
+      <DependentUpon>Add_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_user.aspx.designer.cs">
+      <DependentUpon>Add_user.aspx</DependentUpon>
     </Compile>
     <Compile Include="Departments.aspx.cs">
       <DependentUpon>Departments.aspx</DependentUpon>
@@ -178,6 +187,13 @@
       <DependentUpon>Phones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
