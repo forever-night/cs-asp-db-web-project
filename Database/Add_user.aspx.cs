@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 
 namespace Database
@@ -49,9 +50,18 @@ namespace Database
 
 					sqlCommand = new SqlCommand(txtSqlCommand, sqlConnect);
 
+					MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+
+					byte[] pwdEncrypt = System.Text.Encoding.UTF8.GetBytes(tb_pwd.Text);
+
+
 					sqlCommand.Parameters.AddWithValue("@username", tb_username.Text);
-					sqlCommand.Parameters.AddWithValue("@password", tb_pwd.Text);
+					sqlCommand.Parameters.AddWithValue(
+						"@password", 
+						BitConverter.ToString(md5.ComputeHash(pwdEncrypt)).Replace("-", "").ToLower());
+
 					sqlCommand.Parameters.AddWithValue("@role", tb_role.Text);
+
 
 					sqlCommand.Connection.Open();
 					sqlCommand.ExecuteNonQuery();

@@ -14,6 +14,9 @@ namespace Database
         {
 			switch ((int)Session["Role"])
 			{
+				case -1:
+					Response.Redirect("Login.aspx");
+					break;
 				case 10:
 					Response.Redirect("Main.aspx");
 					break;
@@ -21,15 +24,7 @@ namespace Database
 					btn_add_dept.Enabled = false;
 					btn_add_dept.Visible = false;
 					break;
-				case 100:
-					btn_add_dept.Enabled = true;
-					btn_add_dept.Visible = true;
-					break;
-				default:
-					Response.Redirect("Login.aspx");
-					break;
 			}
-
 
 			gv_depts.DataBind();
         }

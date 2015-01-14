@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
 
 
 namespace Database
@@ -25,36 +26,42 @@ namespace Database
 
 			using (SqlConnection sqlConnect = new SqlConnection(txtSqlConnect))
 			{
-				string txtSqlCommand = "SELECT COUNT(*) FROM Users WHERE username = @username AND password = @password";
+				string txtSqlCommand = "SELECT * FROM Users WHERE username = @username AND password = @password";
 				SqlCommand sqlCommand = new SqlCommand(txtSqlCommand, sqlConnect);
 
+				MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+
+				byte[] pwdEncrypt = System.Text.Encoding.UTF8.GetBytes(tb_pwd.Text);
+
+
 				sqlCommand.Parameters.AddWithValue("@username", tb_login.Text);
-				sqlCommand.Parameters.AddWithValue("@password", tb_pwd.Text);
+				sqlCommand.Parameters.AddWithValue(
+					"@password",
+					BitConverter.ToString(md5.ComputeHash(pwdEncrypt)).Replace("-", "").ToLower());
+
 
 				sqlConnect.Open();
+				SqlDataReader reader = sqlCommand.ExecuteReader();
 
-
-				int result = (int)sqlCommand.ExecuteScalar();
-
-				if (result >= 0)
+				if (reader.HasRows)
 				{
-					SqlCommand sqlCommandRole = new SqlCommand(
-						"SELECT role FROM Users WHERE username = @username AND password = @password", sqlConnect);
+					reader.Read();
 
-					sqlCommandRole.Parameters.AddWithValue("@username", tb_login.Text);
-					sqlCommandRole.Parameters.AddWithValue("@password", tb_pwd.Text);
+					Session["Role"] = reader["role"];
+					Session["User"] = reader["username"];
 
-					Session["Role"] = (int)sqlCommandRole.ExecuteScalar();
-					Session["User"] = tb_login.Text;
+
+					reader.Close();
 				}
 				else
 				{
 					Session["Role"] = -1;
 					Session["User"] = "";
 				}
-				
-
+												
 				sqlConnect.Close();
+
+				Response.Redirect("Main.aspx");
 			}
 
 			tb_login.Text = String.Empty;

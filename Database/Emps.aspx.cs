@@ -33,10 +33,6 @@ namespace Database
 					btn_emp_phones.Visible = false;
 
 					break;
-				case 50:
-					btn_add_emp.Enabled = false;
-					btn_add_emp.Visible = false;
-					break;
 			}
 
 
